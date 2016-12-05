@@ -11,7 +11,9 @@ describe('Correlation ID middleware', () => {
 
   beforeEach(() => {
     next = () => callCount++;
-    req = { };
+    req = {
+      headers: { }
+    };
   });
 
   it('should call next', () => {
@@ -29,7 +31,7 @@ describe('Correlation ID middleware', () => {
     it('should allow specification of a custom header field', () => {
       req.headers = { Cheese: 'foobar' };
       callMiddleware(req, next, { header: 'Cheese' });
-      expect(req.id).to.equal('Cheese');
+      expect(req.id).to.equal('foobar');
     });
   });
 
