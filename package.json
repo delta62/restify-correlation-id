@@ -6,7 +6,7 @@
     "pretest": "eslint lib test",
     "test": "mocha"
   },
-  "main": "index.js",
+  "main": "lib/index.js",
   "repository": "git@github.com:delta62/restify-correlation-id.git",
   "author": "Sam Noedel <sam.noedel@gmail.com>",
   "license": "MIT",
