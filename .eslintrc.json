@@ -20,6 +20,10 @@
         "semi": [
             "error",
             "always"
+        ],
+        "max-len": [
+          "error",
+          80
         ]
     }
 }
