@@ -1,6 +1,6 @@
 {
   "name": "restify-correlation-id",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "A restify plugin to track correlation IDs across API requests",
   "scripts": {
     "pretest": "eslint lib test",
