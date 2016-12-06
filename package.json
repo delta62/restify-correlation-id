@@ -10,6 +10,9 @@
   "repository": "git@github.com:delta62/restify-correlation-id.git",
   "author": "Sam Noedel <sam.noedel@gmail.com>",
   "license": "MIT",
+  "engines": {
+    "node": ">= 6.0.0"
+  },
   "dependencies": {},
   "devDependencies": {
     "code": "^4.0.0",
