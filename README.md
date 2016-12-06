@@ -1,3 +1,6 @@
+[![Build Status](https://travis-ci.org/delta62/restify-correlation-id.svg?branch=master)](https://travis-ci.org/delta62/restify-correlation-id)
+[![npm version](https://badge.fury.io/js/restify-correlation-id.svg)](https://badge.fury.io/js/restify-correlation-id)
+
 # restify-correlation-id
 A restify plugin to track correlation IDs across API requests
 
