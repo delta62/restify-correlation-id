@@ -1,6 +1,6 @@
 'use strict';
 
-const correlationId            = require('./index'),
+const correlationId            = require('../lib/index'),
   { beforeEach, describe, it } = require('mocha'),
   expect                       = require('code').expect;
 
