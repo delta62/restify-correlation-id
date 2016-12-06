@@ -1,3 +1,11 @@
 language: node_js
 node_js:
-  - 6
+- 6
+deploy:
+  provider: npm
+  email: sam.noedel@gmail.com
+  api_key:
+    secure: btj6dgk7NXioTOv0rLvkOH+y2SK44NxjgTO8rkZQvYlo9j+YaZ21YZoYMyzPztmKK4apFhq9Q2RmpkGYgjkLKpwX0UKWkycQ2f868/12kHHq6zuLWZxYQkI/EJVXCSf54X6IkBWCfg6+I1M9vo7fSezYgrnGp/O4+u7QuZaUIMvQv63DjSXnpqDovq0XWE3jax0TvDCbyF9BU7vMCQcx/OYtTzcUvTj+bFduoZrC+rPeJRvYbpamSxThZzlxjhAxjGRn752w0wZg2XdAKQhVBoCGNIlzyA7O9dDkQNdtpNtI/n/IGRf61qkuMF6z1ScXcGWc+qcBhCdfaff3gdLqnsqrEiwOEothSsdjIPlbzA+sIEtRYql6nT0aIa8eWjG3XOaTenG6A+C+3TbKw7m5ZazFzdjQ0u9nxNujtg21f1c8+QmURbrkccv2yKx72gHdSVYkZp8kndrgRztEABaN4bDTt36iNnI8axW/3JDKb46TGRlT0KmeD5oozZgcJZJoKO0x9K2399IaPJQf8wmTLtbyA+HLC551lAY3GLyhqCoAJ3a31lKkqErIqxBfX0+C/wVR6iVB0Hlr9YlOyavs420O4JVjEz4lGTy3Q+RqnHDAYvpaOf31W4FNfAbm/AHNStekqzduSt0/fR3eRkhbqc0tlK7cwO06AudNfRbNyE4=
+  on:
+    tags: true
+    repo: delta62/restify-correlation-id
