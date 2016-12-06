@@ -4,14 +4,30 @@
 # restify-correlation-id
 A restify plugin to track correlation IDs across API requests
 
+Correlation IDs (sometimes called "trace IDs") are unique identifiers that
+track a request through a series of API calls.
+
+This middleware parses incoming headers for a set correlation ID and stores it
+away on the `req` object. If no appropriate headers are sent with the request,
+a new ID is created instead.
+
 ## Usage
 
 ``` js
-const correlationId = require('restify-correlation-id').cid,
-  restify = require('restify');
+const restify = require('restify'),
+  { cid } = require('restify-correlation-id');
 
 let server = restify.createServer();
-server.use(correlationId(opts));
+server.use(correlationId());
+
+server.get('/', (req, res, next) => {
+  res.send(req.cid);
+  next();
+});
+
+server.listen(8080, () => {
+  console.log('I echo correlation IDs!');
+});
 ```
 
 ### Option
@@ -25,7 +41,7 @@ server.use(correlationId(opts));
 #### header
 
 The name of the header to parse a correlation ID from. Parsing is
-case-insensitive.
+case-insensitive. The default header field is "CorrelationID".
 
 ## License
 MIT
