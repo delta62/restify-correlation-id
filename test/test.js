@@ -12,13 +12,19 @@ describe('Correlation ID middleware', () => {
   beforeEach(() => {
     next = () => callCount++;
     req = {
-      headers: { }
+      headers: { },
+      id: () => 'default'
     };
   });
 
-  it('should call next', () => {
+  it('should call next()', () => {
     callMiddleware(req, next);
     expect(callCount).to.equal(1);
+  });
+
+  it('should default the correlation ID to the request ID', () => {
+    callMiddleware(req, next);
+    expect(req.cid).to.equal('default');
   });
 
   describe('header field', () => {
