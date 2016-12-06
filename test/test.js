@@ -25,27 +25,27 @@ describe('Correlation ID middleware', () => {
     it('should default to CorrelationID', () => {
       req.headers = { CorrelationID: 'foobar' };
       callMiddleware(req, next);
-      expect(req.id).to.equal('foobar');
+      expect(req.cid).to.equal('foobar');
     });
 
     it('should allow specification of a custom header field', () => {
       req.headers = { Cheese: 'foobar' };
       callMiddleware(req, next, { header: 'Cheese' });
-      expect(req.id).to.equal('foobar');
+      expect(req.cid).to.equal('foobar');
     });
   });
 
   describe('case sensitivity', () => {
     it('should match headers with matching case', () => {
-      req.headers = { CorrelationId: 'STOP YELLING IN THE HOUSE' };
+      req.headers = { CorrelationID: 'foobar' };
       callMiddleware(req, next);
-      expect(req.id).to.equal('STOP YELLING IN THE HOUSE');
+      expect(req.cid).to.equal('foobar');
     });
 
     it('should match headers with different cases', () => {
-      req.headers = { CorrelationID: 'h4x' };
+      req.headers = { cOrrElAtIOnId: 'foobar' };
       callMiddleware(req, next);
-      expect(req.id).to.equal('h4x');
+      expect(req.cid).to.equal('foobar');
     });
   });
 });
